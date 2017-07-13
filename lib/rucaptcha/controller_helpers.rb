@@ -8,7 +8,7 @@ module RuCaptcha
 
     # session key of rucaptcha
     def rucaptcha_sesion_key_key
-      session_id = session.respond_to?(:id) ? session.id : session[:session_id]
+      session_id = cookies[:captcha_key]
       ['rucaptcha-session', session_id].join(':')
     end
 
